@@ -1,0 +1,92 @@
+.footer{
+    margin-top: 90px;
+
+    &-logo{
+        text-align: center;
+        background: url(../images/footer-line.svg) no-repeat;
+        background-position: center;
+
+        @media screen and (min-width: 1440px){
+           background-size: 100vw;
+        }
+        &_sp{
+            display: none;
+        }
+    }
+    .insta-btn{
+        margin-top: 35px;
+        text-align: center;
+    }
+    &-flex{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+
+        .footer-l{
+            width: 50vw;
+            height: 167px;
+            font-size: 2rem;
+            text-align: center;
+            line-height: 167px;
+
+            &_open_small{
+                margin-left: 10px;
+                font-size: 1.6rem;
+            }
+        }
+        .footer-r{
+            width: 50vw;
+        }
+    }
+
+    .copyright_wrapp{
+        margin-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 959px) {
+        margin-top: 50px;
+
+        .insta-btn{
+            margin-top: 22px;
+        }
+        &-flex{
+            flex-direction: column-reverse;
+
+            .footer-l{
+                width: 100vw;
+                height: 50px;
+                font-size: 1.6rem;
+                line-height: 50px;
+    
+                &_open_small{
+                    font-size: 1.2rem;
+                }
+            }
+            .footer-r{
+                width: 100vw;
+            }
+        }
+        .copyright_wrapp{
+            margin-top: 10px;
+        }
+    }
+    
+    @media screen and (max-width: 519px) {
+        &-logo{
+            background: url(../images/footer-line_sp.svg) no-repeat;
+            background-position: center;
+
+            &_sp{
+                display: inline-block;
+            }
+            &_pc{
+                display: none;
+            }
+            @media screen and (min-width: 375px){
+               background-size: 100vw;
+            }
+        }
+    }
+}

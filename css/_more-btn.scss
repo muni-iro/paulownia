@@ -1,0 +1,278 @@
+// topページ-conceptのmoreボタン
+.more-btn_wrapp{
+    margin-top: 63px;
+    width: 187px;
+
+    .more-btn{
+        display: block;
+        height: 36px;
+        text-align: center;
+        position: relative;
+        
+        .more-btn_ttl{
+            display: block;
+            padding-top: 10px;
+            font-size: 1.6rem;
+            transition: all $easeInOutExpo .4s;
+        }
+        .more-btn_subttl{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            font-size: 1.4rem;
+            transition: all $easeInOutExpo .4s;
+        }
+        
+        hr{
+            margin-top: 5px;
+            display: block;
+            // height: 0;
+            border-top: solid 1px #707070;
+            transition: all $easeInOutExpo .4s;
+        }
+        
+        .more-btn_arrow_r{
+            display: block;
+            width: 18px;
+            height: 36px;
+            background: url(../images/harf-circle_r.svg) no-repeat 100%,0;
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            left: 18px;
+            transform: translateY(-50%);
+            transition: all $easeInOutExpo .4s;
+            
+        }
+        .more-btn_arrow_l{
+            display: block;
+            width: 18px;
+            height: 36px;
+            background: url(../images/harf-circle_l.svg) no-repeat 0,0;
+            background-size: cover;
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+            transition: all $easeInOutExpo .4s;
+        }
+        
+        &:hover{
+            
+            .more-btn_ttl{
+                opacity: 0;
+            }
+            .more-btn_subttl{
+                opacity: 1;
+            }
+            hr{
+                opacity: 0;
+            }
+            .more-btn_arrow_r{
+                left: calc(100% - 18px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 959px) {
+    .more-btn_wrapp{
+        margin-top: 40px;
+    
+        .more-btn{
+            
+            .more-btn_ttl{
+                font-size: 1.4rem;
+            }
+            .more-btn_subttl{
+                font-size: 1.4rem;
+            }
+            
+            .more-btn_arrow_r{
+                width: 14px;
+                height: 28px;
+                left: 14px;
+                
+            }
+            .more-btn_arrow_l{
+                width: 14px;
+                height: 28px;
+            }
+            
+            &:hover{
+                .more-btn_arrow_r{
+                    left: calc(100% - 14px);
+                }
+            }
+        }
+    }  
+}
+@media screen and (max-width: 519px) {
+    .more-btn_wrapp{
+        margin-top: 30px;
+    }  
+}
+// topページ-conceptのmoreボタン
+
+
+.food{
+    .to-pdf_wrapp{
+        margin-left: 0;
+        margin-right: auto;
+
+        @media screen and (max-width: 959px) {
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+}
+.drink{
+    .to-pdf_wrapp{
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+.alcohol{
+    .to-pdf_wrapp{
+        margin-left: 0;
+        margin-right: auto;
+
+        @media screen and (max-width: 959px) {
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+}
+
+.to-pdf_wrapp{
+    margin-top: 30px;
+    border: solid 1px #333;
+    box-sizing: border-box;
+    width: 300px;
+
+    .to-pdf{
+        display: block;
+        height: 70px;
+        text-align: center;
+        position: relative;
+
+        
+        .to-pdf_ttl{
+            display: block;
+            font-size: 1.6rem;
+            line-height: 70px;
+            transition: all $easeInOutExpo .4s;
+            z-index: 1;
+            position: relative;
+            
+            &:after{
+                display: inline-block;
+                content: '';
+                // margin-left: 10px;
+                width: 18px;
+                height: 18px;
+                background-image: url(../images/download-icon.svg);
+                transition: all $easeInOutExpo .4s;
+                opacity: 0;
+                transform: translate(10px, 2px);
+            }
+            &:before{
+                display: block;
+                content: '';
+                width: 0%;
+                height: 100%;
+                background-color: #333;
+                color: #333;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transition: all $easeInOutExpo .4s;
+                z-index: -1;
+            }
+        }
+        
+        &:hover{
+                
+            .to-pdf_ttl{
+                color: #fff;
+                opacity: 1;
+                
+                &::after{
+                    opacity: 1;
+                }
+                &::before{
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 519px) {
+        width: 100%;
+
+    }
+}
+
+.contact-btn_wrapp{
+    box-sizing: border-box;
+    width: 100%;
+    background-color: $accentColor;
+
+    .contact-btn{
+        display: block;
+        height: 167px;
+        text-align: center;
+        position: relative;
+
+        
+        .contact-btn_ttl{
+            display: block;
+            font-size: 4.8rem;
+            font-weight: bold;
+            color: #fff;
+            line-height: 167px;
+            transition: all $easeInOutExpo .4s;
+            z-index: 1;
+            position: relative;
+            
+            &:before{
+                display: block;
+                content: '';
+                width: 0%;
+                height: 100%;
+                background-color: #333;
+                color: #333;
+                position: absolute;
+                top: 0;
+                right: 0;
+                transition: all $easeInOutExpo .4s;
+                z-index: -1;
+            }
+        }
+        
+        &:hover{
+                
+            .contact-btn_ttl{
+        
+                &::before{
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width: 959px) {
+        .contact-btn{
+            height: 100px;
+   
+            .contact-btn_ttl{
+                font-size: 3rem;
+                line-height: 100px;
+            }
+        }
+    }
+}

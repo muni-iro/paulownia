@@ -1,0 +1,296 @@
+@import "cubic-bezier";
+
+// ===navigation 共通デザイン＝＝＝
+@mixin nav-lists(){
+    .nav-lists{
+        font-size: 2rem;
+        font-weight: bold;
+
+        .nav-list_content{
+            background-color: transparent;
+            width: fit-content;
+            a{
+                display: block;
+                padding: 2px 10px;
+                color: #333;
+                line-height: 1.2;
+                transition: all $easeInOutExpo .4s;
+                position: relative;
+                
+                &:after{
+                    display: block;
+                    content: '';
+                    width: 0%;
+                    height: 28px;
+                    background-color: #333;
+                    color: #333;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    transition: all $easeInOutExpo .4s;
+                    z-index: -1;
+                }
+            }
+            &:hover{
+                a{
+                    color: #fff;
+
+                    &:after{
+                        width: 100%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+        .nav-list_insta{
+            width: 29px;
+
+            &-logo{
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+// ===/navigation 共通デザイン＝＝＝
+
+// ===header 共通＝＝＝
+// .header{
+
+// }
+// ===/header 共通＝＝＝
+
+.header_pc{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // margin-top: -30px;
+    padding: 0 calc((73/1440)*100vw) 0 calc((30/1440)*100vw);
+    box-sizing: border-box;
+    mix-blend-mode: multiply;
+    position: fixed;
+    z-index: 100;
+    opacity: 0;
+    transition: all ease .5s;
+    
+    .header-r{
+        @include nav-lists();
+        
+        .nav-lists{
+            display: flex;
+            align-items: center;
+            
+            li{
+                margin-left: 10/1440*100vw;
+            }
+        }
+        
+        @media screen and (max-width: 959px) {
+            // display: none;
+        }
+    }
+}
+
+.on-top{
+    padding-top: 70px;
+    opacity: 1;
+}
+
+.is-fixed{
+    padding-top: 30px;
+    opacity: 1;
+}
+
+.header_sp{
+    display: none;
+}
+
+@media screen and (max-width: 959px) {
+    .header_pc{
+        display: none;
+    }
+    .header_sp{
+        // margin-top: -5vw;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5vw 5vw 0 5vw;
+        box-sizing: border-box;
+        position: fixed;
+
+        z-index: 100;
+        transition: all ease .5s;
+    }
+
+    .header-l{
+        z-index: 1000;
+        mix-blend-mode: lighten;
+    }
+
+    .header_humburger{
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        // background-color: #fff;
+        background-color: #FFC408;
+        box-sizing: border-box;
+        cursor: pointer;
+        z-index: 1000;
+        position: relative;
+        
+        &:hover{
+            .header_humburger-frame{
+                transform: rotate(90deg) scale(1.1);
+            }
+        }
+        
+        &-frame{
+            width: 100%;
+            height: 100%;
+            transition: all $easeInOutExpo .3s;
+            
+            .header_humburger-dots{
+                display: block;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: #333;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+            .dot-1{
+                transform: translate(calc(-50% - 10px), calc(-50% - 10px));
+            }
+            .dot-2{
+                transform: translate(calc(-50% + 10px), calc(-50% - 10px));
+            }
+            .dot-3{
+                transform: translate(calc(-50% - 10px), calc(-50% + 10px));
+            }
+            .dot-4{
+                transform: translate(calc(-50% + 10px), calc(-50% + 10px));
+            }
+            .dot-5{
+                transform: translate(-50%, calc(-50% - 10px));
+                transition: all $easeInOutExpo .4s;
+            }
+            .dot-6{
+                transform: translate(calc(-50% + 10px), -50%);
+                transition: all $easeInOutExpo .4s;
+            }
+            .dot-7{
+                transform: translate(-50%, calc(-50% + 10px));
+                transition: all $easeInOutExpo .4s;
+            }
+            .dot-8{
+                transform: translate(calc(-50% - 10px), -50%);
+                transition: all $easeInOutExpo .4s;
+            }
+            .dot-9{
+                transform: translate(-50%, -50%);
+            }
+
+        }
+        .close{
+            .dot-5{
+                transform: translate(calc(-50% + 5px), calc(-50% - 5px));
+            }
+            .dot-6{
+                transform: translate(calc(-50% + 5px), calc(-50% + 5px));
+            }
+            .dot-7{
+                transform: translate(calc(-50% - 5px), calc(-50% + 5px));
+            }
+            .dot-8{
+                transform: translate(calc(-50% - 5px), calc(-50% - 5px));
+            }
+        }
+    }
+    .humburger_menu{
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -100vw;
+        width: 100vw;
+        height: 120vh;
+        background-color: #333;
+        transition: all $easeInOutQuart .4s;
+        opacity: 0;
+        z-index: 100;
+    
+        &-nav{
+            display: flex;
+            justify-content: flex-end; 
+            margin: 0 auto;
+            padding-left: (160/1440)*100vw;
+            padding-right: (160/1440)*100vw;
+            width: 60vw;
+    
+    
+            &_inner{
+                margin-top: 120/811*100vh;
+
+                @include nav-lists();
+                
+                .nav-lists{
+                    font-size: 2.8rem;
+
+                    .nav-list_insta{
+                        width: 34px;
+                    }
+                }
+
+                li{
+                    margin-top: 25/811*100vh;
+                    margin-right: 0;
+                    margin-left: auto;
+                }
+                
+                .nav-list_content{
+                    a{
+                        &:before{
+                            display: block;
+                            content: '';
+                            width: 100%;
+                            height: 28px;
+                            background-color: #fff;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: -1;
+                        }
+                    }
+                }
+    
+                // .humburger_menu-lists{
+                //     text-align: right;
+    
+                //     .humburger_menu-list{
+                //         margin-top: 38px;
+                        
+                //         .humburger_menu-item{
+                //             display: block;
+                //             font-size: 2.8rem;
+                //             color: #fff;
+                //             letter-spacing: 0.06em;
+                //             transition: all $easeInOutBack .3s;
+    
+                //             &:hover{
+                //                 transform: translateX(-10px);
+                //             }
+                //         }
+                //     }
+                // }
+            }
+        }
+    }
+}

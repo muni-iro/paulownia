@@ -1,0 +1,280 @@
+// ================シュッと出現================
+/*背景色が伸びて出現 共通*/
+.bgextend{
+    animation-name:bgextendAnimeBase;
+    animation-duration:1s;
+    animation-fill-mode:forwards;
+    position: relative;
+    overflow: hidden;/*はみ出た色要素を隠す*/
+    opacity:0;
+}
+  
+@keyframes bgextendAnimeBase{
+    from {
+        opacity:0;
+    }
+
+    to {
+        opacity:1;  
+    }
+}
+
+/*中の要素*/
+.bgappear{
+    animation-name:bgextendAnimeSecond;
+    animation-duration:0s;
+    animation-delay: 1s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+}
+
+@keyframes bgextendAnimeSecond{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/*--------- 左から --------*/
+.bgLRextend::before{
+    animation-name:bgLRextendAnime;
+    animation-duration:2s;
+    animation-fill-mode:forwards;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #222;/*伸びる背景色の設定*/
+    z-index: 1;
+}
+@keyframes bgLRextendAnime{
+    0% {
+        transform-origin:left;
+        transform:scaleX(0);
+    }
+    50% {
+        transform-origin:left;
+        transform:scaleX(1);
+    }
+    50.001% {
+        transform-origin:right;
+    }
+    100% {
+        transform-origin:right;
+        transform:scaleX(0);
+    }
+}
+// ================/シュッと出現================
+
+
+// ================パラパラパラと出現================
+// Config: fonts
+$font-mono: "Cutive Mono", monospace;
+// Config: Ease
+$ease-cb: cubic-bezier(.19,1,.22,1);
+
+//--------------------------
+//  nth-trans-delay()
+//  @description: Transition Delay on nth-childs
+//  @param: $delay_items: [7]    - number of nth-of-type items to create
+//  @param: $delay_time:[1.5s]   - transition-dealy value
+//--------------------------
+@mixin nth-trans-delay($delay_items: 7, $delay_time: 0.2s){
+@for $i from 1 through $delay_items {
+  &:nth-child(#{$i}) {   
+    transition-delay: $delay_time * $i; 
+  }
+  }
+}
+
+//--------------------------
+//  nth-ani-delay()
+//  @description: Animation Delay on nth-childs
+//  @param: $delay_items: [7] - number of nth-of-type items to create
+//  @param: $delay_time:[1.5s] - transition-dealy value
+//--------------------------
+@mixin nth-ani-delay($delay_items: 7, $delay_time: 0.2s){
+@for $i from 1 through $delay_items {
+  &:nth-child(#{$i}) {   
+    animation-delay: $delay_time * $i; 
+  }
+  }
+}
+//--------------------------
+//  bg-overlay()
+//  @description:pseduo overlay element  
+//  @param: $bg_hex: [$color-dark] - hex value for rgba conversion
+//  @param: $bg_opacity:[0.6] - alpha transparency level
+//  @param: $top_layer: element or class name for higher z-index layer
+//--------------------------
+@mixin bg-overlay($bg_hex: #111, $bg_opacity: 0.6, $top_layer: 'header') {
+  &:after {
+    z-index: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba($bg_hex, $bg_opacity);
+  }
+  
+  // Layer atop overlay
+  & > #{$top_layer}{
+    z-index: 2;
+    position: relative;
+  }
+}
+
+// Body
+.menu{
+
+  // Letter animation
+  &-name span{
+    animation: letter-glow 0.7s 0s ease both;
+    @include nth-ani-delay(100, 0.05s);
+  }
+
+  //Letter animation
+  &-intro span{
+    animation: letter-glow 0.7s 0s ease both;
+    @include nth-ani-delay(180, 0.05s);
+  }
+  //Letter animation
+  &-temp span{
+    animation: letter-glow 0.7s 0s ease both;
+    @include nth-ani-delay(180, 0.05s);
+  }
+  //Letter animation
+  &-sum span{
+    animation: letter-glow 0.7s 0s ease both;
+    @include nth-ani-delay(180, 0.05s);
+  }
+}
+// .parapara{
+//     animation: letter-glow 0.7s 0s ease both;
+//     @include nth-ani-delay(100, 0.05s);
+//   }
+
+
+// Letter Glow
+@keyframes letter-glow{
+  0%   { opacity: 0; text-shadow: 0px 0px 1px rgba(255,255,255,0.1)}
+  66%  { opacity: 1; text-shadow: 0px 0px 20px rgba(255,255,255,0.9) }
+  77%   { opacity: 1;  }
+  100% { opacity:1; text-shadow: 0px 0px 20px rgba(255,255,255,0.0)}
+}
+// ================/パラパラパラと出現================
+
+
+
+// ================fadeInTrigger================
+.fadeInUpTrigger{
+    opacity: 0;
+    transform: translate(0, 30px);
+}
+.fadeInUp{
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all $easeOutExpo 2s;
+}
+
+.fadeInSlideTrigger{
+    opacity: 0;
+    transform: translate(-20px, 0);
+}
+.fadeInSlide{
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: all $easeOutExpo 2s;
+}
+.delay-time3{
+    // animation-delay: 3.0s;/*この数字を指定したい遅延時間に変更*/
+    transition-delay: .3s;
+}
+.delay-time5{
+    transition-delay: .5s;
+}
+.delay-time7{
+    transition-delay: .7s;
+}
+.delay-time9{
+    transition-delay: .9s;
+}
+// ================/fadeInTrigger================
+
+
+// ================tel-animation ぴょんぴょん跳ねる================
+
+@keyframes wave {
+  100% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+.contact-tel{
+  
+  .tel-animation {
+    display: inline-block;
+  }
+
+  &:hover .tel-animation{
+    animation-name: wave;
+    animation-duration: .15s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    // animation-timing-function: $easeOutQuint;
+  }
+  
+  &:hover .tel-animation:nth-child(2) {
+    animation-delay: .1s;
+  }
+  
+  &:hover .tel-animation:nth-child(3) {
+    animation-delay: .15s;
+  }
+  
+  &:hover .tel-animation:nth-child(4) {
+    animation-delay: .2s;
+  }
+  &:hover .tel-animation:nth-child(5) {
+    animation-delay: .25s;
+  }
+  
+  &:hover .tel-animation:nth-child(6) {
+    animation-delay: .3s;
+  }
+  
+  &:hover .tel-animation:nth-child(7) {
+    animation-delay: .35s;
+  }
+  &:hover .tel-animation:nth-child(8) {
+    animation-delay: .4s;
+  }
+  
+  &:hover .tel-animation:nth-child(9) {
+    animation-delay: .45s;
+  }
+  
+  &:hover .tel-animation:nth-child(10) {
+    animation-delay: .5s;
+  }
+  &:hover .tel-animation:nth-child(11) {
+    animation-delay: .55s;
+  }
+  
+  &:hover .tel-animation:nth-child(12) {
+    animation-delay: .6s;
+  }
+  
+  &:hover .tel-animation:nth-child(13) {
+    animation-delay: .65s;
+  }
+  &:hover .tel-animation:nth-child(14) {
+    animation-delay: .7s;
+  }
+}
+// ================/tel-animation================

@@ -1,0 +1,366 @@
+@import "utility";
+@import "header";
+@import "footer";
+@import "animation";
+@import "more-btn";
+
+.contact{
+    padding-top: 250px;
+
+    .section-group{
+        text-align: center;
+
+        hr{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &-attention{
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    &-tel_line{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        width: 848/1440*100vw;
+        height: 0;
+        border-top: solid 1px #707070;
+
+        &:first-of-type{
+            margin-top: 87px;
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+
+    &-tel_wrapp{
+        padding-top: 46px;
+        padding-bottom: 39px;
+        display: flex;
+        justify-content: center;
+        // align-items: flex-end;
+        align-items: center;
+
+        .contact-tel{
+            font-size: 3.2rem;
+            font-weight: bold;
+
+            .small-txt{
+                font-size: 2rem;
+                margin-right: 12px;
+            }
+        }
+
+        .contact-reception{
+            margin-left: 100/1440*100vw;
+
+            .small-txt{
+                font-size: 1.2rem;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 959px) {
+        padding-top: 120px;
+
+        &-attention{
+            padding-right: 5vw;
+            padding-left: 5vw;
+        }
+        &-tel_line{
+            width: 70vw;
+    
+            &:first-of-type{
+                margin-top: 45px;
+            }
+        }
+        &-tel_wrapp{
+            padding-top: 20px;
+            padding-bottom: 21px;
+            flex-direction: column;
+    
+            .contact-tel{
+                margin-right: 70/375*100vw;
+                font-size: 2rem;
+    
+                .small-txt{
+                    font-size: 1.2rem;
+                    margin-right: 5px;
+                }
+            }
+    
+            .contact-reception{
+                margin-top: 11px;
+                margin-left: 70/375*100vw;
+    
+                .small-txt{
+                    font-size: 1.0rem;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+    
+    @media screen and (max-width: 519px) {
+        
+    }
+}
+
+.contact-form{
+    padding-top: 83px;
+
+    h2{
+        font-size: 2.4rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 959px) {
+        padding-top: 48px;
+
+        h2{
+            font-size: 1.6rem;
+        }
+    }
+
+    @media screen and (max-width: 519px) {
+        padding-right: 5vw;
+        padding-left: 5vw;
+        width: 90vw;
+    }
+
+    form{
+        margin-right: 242/1440*100vw;
+            
+        .form-contents{
+
+            .individual{
+                align-items: center;
+            }
+            
+            .form-list{
+                margin-top: 75px;
+                display: flex;
+                justify-content: flex-end;
+
+                &:first-of-type{
+                    margin-top: 31px;
+                }
+                &:last-of-type{
+                    margin-top: 55px;
+                }
+                .form-ttl{
+                    font-size: 2rem;
+                    margin-right: 70/1440*100vw;
+                    position: relative;
+
+                    .required{
+                        font-size: 4rem;
+                        color: #E83015;
+                        position: absolute;
+                        right: -20px;
+                        transform: translateY(-10px);
+                    }
+                }
+                .form-detail{
+                    display: block;
+                    padding: 15px 10px;
+                    width: 725/1440*100vw;
+                    font-size: 1.8rem;
+                    outline: none;
+                    border: none;
+                    background-color: #ededed;
+                    box-sizing: border-box;
+                }
+                textarea{
+                    height: 342px;
+                }  
+                .radio-list{
+                    display: flex;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    width: 725/1440*100vw;
+                    
+                    li{
+                        margin-right: 50px;
+                        margin-bottom: 20px;
+                        
+                        .radio-btn{
+                            margin: 0 17px 0 0;
+                            width: 25px;;
+                            height: 25px;
+                            border-color: transparent;
+                            border-radius: 50%;
+                            background-color: #ededed;
+                            vertical-align: -6px;
+                            outline: none;
+                            appearance: none;
+                            transition: all $easeInOutExpo .2s;
+                        }
+                        .radio-btn:checked{
+                            background-color: $accentColor;
+                            box-shadow: 0 0 0 2px #fff, 0 0 0 3px $accentColor;
+                        }
+                    } 
+                }
+            }
+        }
+
+        @media screen and (max-width: 959px) {
+            
+            .form-contents{
+                
+                .form-list{
+                    margin-top: 30px;
+
+                    &:last-of-type{
+                        margin-top: 25px;
+                    }
+                    .form-ttl{
+                        font-size: 1.4rem;
+    
+                        .required{
+                            font-size: 2.8rem;
+                            right: -14px;
+                            transform: translateY(-5px);
+                        }
+                    }
+                    .form-detail{
+                        padding: 10px 10px;
+                        font-size: 1.4rem;
+                    }
+                    textarea{
+                        height: 200px;
+                    }  
+                    .radio-list{
+                        width: 725/1440*100vw;
+                        
+                        li{
+                            margin-bottom: 15px;
+                            
+                            .radio-btn{
+                                margin: 0 10px 0 0;
+                                width: 20px;;
+                                height: 20px;
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 519px) {
+            margin-right: 0;
+
+            .form-contents{
+                
+                .form-list{
+                    margin-top: 25px;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    &:last-of-type{
+                        margin-top: 25px;
+                    }
+                    .form-ttl{
+                        margin-right: 0;
+                    }
+                    .form-detail{
+                        margin-top: 10px;
+                        width: 100%;
+                    }
+                    textarea{
+                        height: 200px;
+                    }  
+                    .radio-list{
+                        margin-top: 15px;
+                        width: 100%;
+                        
+                        li{
+                            margin-right: 0;
+                            margin-bottom: 10px;
+                            margin-left: 30px;
+                            font-size: 1.2rem;
+                            
+                            .radio-btn{
+                                margin: 0 8px 0 0;
+                                width: 18px;;
+                                height: 18px;
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+
+        .send-btn_wrapp{
+            margin-top: 75px;
+            margin-right: 0;
+            margin-left: auto;
+            width: 725/1440*100vw;
+
+            .send-btn{
+                text-align: left;
+    
+                button{
+                    border: solid 1px #333;
+                    padding: 10px 0;
+                    max-width: 500px;
+                    width: 100%;
+                    font-family: 'Lato', 'Noto Sans JP', sans-serif;
+                    color: #333;
+                    font-size: 2.4rem;
+                    letter-spacing: 0.5em;
+                    background-color: transparent;
+                    outline: none;
+                    cursor: pointer;
+                    transition: all $easeInOutExpo .4s;
+                    position: relative;
+                    // z-index: 1;
+    
+                    &:before{
+                        display: block;
+                        content: '';
+                        width: 0%;
+                        height: 100%;
+                        background-color: #333;
+                        color: #333;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        transition: all $easeInOutExpo .4s;
+                        z-index: -1;
+                    }
+                    &:hover{
+                        color: #fff;
+                        letter-spacing: 0.25em;
+    
+                        &::before{
+                            width: 100%;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: 959px) {
+                margin-top: 30px;
+
+                .send-btn{
+        
+                    button{
+                        padding: 8px 0;
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            @media screen and (max-width: 519px) {
+                width: 100%;
+            }
+        }
+    }
+}
