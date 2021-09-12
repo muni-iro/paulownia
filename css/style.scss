@@ -364,7 +364,7 @@
     }
     //+++ /menu汎用 +++
 
-    .food{
+    .mocktails{
         
         .menu-ttl_wrapp{
             flex-direction: row;
@@ -491,11 +491,58 @@
             }
         }
     }
+
+    .food{
+
+        .menu-ttl_wrapp{
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .menu-contents_flex{
+            flex-direction: row;
+
+            .menu-nav{
+                margin-right: 15/1440*100vw;
+                margin-left: -65/1440*100vw;
+            }
+        }
+
+        .menu-lists{
+            .menu-list{
+                .menu-list_inner{
+                    flex-direction: row-reverse;
+    
+                    .menu-list_text{
+                        margin-left: 30/1440*100vw;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: 959px) {
+            .menu-contents_flex{
+                flex-direction: row-reverse;
+                .menu-nav{
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+            }
+            .menu-lists{
+                .menu-list{
+                    .menu-list_inner{
+                        flex-direction: column-reverse;
+                    }
+                }
+            }
+        }
+    }
 }
 // ---/menu--------------------------------------------
 
-// ---option--------------------------------------------
-.option{
+// ---point--------------------------------------------
+.point{
     padding-top: 50px;
     
     @media screen and (max-width: 959px) {
@@ -542,7 +589,7 @@
         margin-top: 84px;
         position: relative;
 
-        .option-icon-lists_pc{
+        .point-icon-lists_pc{
             display: flex;
             justify-content: center;
             text-align: center;
@@ -581,7 +628,7 @@
             }
         }
 
-        .option-icon-lists_sp{
+        .point-icon-lists_sp{
             display: none;
         }
 
@@ -602,27 +649,27 @@
             &-line_pc{
                 display: none;
             }
-            .option-icon-lists_pc{
+            .point-icon-lists_pc{
                 display: none; 
             }
-            .option-icon-lists_sp{
+            .point-icon-lists_sp{
                 display: block;
                 width: 300px;
                 margin-left: auto;
                 margin-right: auto;
 
-                .option-icon-lists_sp_1{
+                .point-icon-lists_sp_1{
                     display: flex;
                     justify-content: flex-start;
                     position: relative;
                 }
-                .option-icon-lists_sp_2{
+                .point-icon-lists_sp_2{
                     margin-top: 56px;
                     display: flex;
                     justify-content: flex-end;
                     position: relative;
                 }
-                .option-icon_group {
+                .point-icon_group {
                     position: relative;
                     
                     &:not(:first-of-type){
@@ -657,7 +704,7 @@
                     }
                 }
                 
-                .option-icon-line_sp{
+                .point-icon-line_sp{
                     margin: 0;
                     width: 100vw;
                     position: absolute;
@@ -669,10 +716,10 @@
         }
         
         @media screen and (max-width: 519px) {
-            .option-icon-lists_sp{
+            .point-icon-lists_sp{
                 width: 250px;
 
-                .option-icon_group {               
+                .point-icon_group {               
                     &:not(:first-of-type){
                         margin-left: 40px;
                     }
@@ -681,7 +728,7 @@
         }
     }
 }
-// ---/option--------------------------------------------
+// ---/point--------------------------------------------
 
 // ---access--------------------------------------------
 .access{

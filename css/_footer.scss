@@ -23,15 +23,45 @@
         margin-top: 30px;
 
         .footer-l{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            // align-items: center;
             width: 50vw;
             height: 167px;
-            font-size: 2rem;
-            text-align: center;
-            line-height: 167px;
 
-            &_open_small{
-                margin-left: 10px;
-                font-size: 1.6rem;
+            &_inner{
+                margin-right: auto;
+                margin-left: auto;
+                width: fit-content;
+            }
+
+            &_schedule_flex{
+                display: flex;
+                &:first-of-type{
+                    font-weight: bold;
+                }
+                &:not(:first-of-type){
+                    margin-top: 8px;
+                }
+
+                dt{
+                    width: 100px;
+                }
+            }
+            &_schedule_open_small{
+                margin-left: 5px;
+                font-weight: normal;
+                font-size: 1.4rem;
+            }
+
+            &_seat_flex{
+                margin-top: 8px;
+                display: flex;
+
+                dt{
+                    width: 140px;
+                }
             }
         }
         .footer-r{
@@ -52,25 +82,46 @@
             margin-top: 22px;
         }
         &-flex{
-            flex-direction: column-reverse;
+            // flex-direction: column-reverse;
+            flex-direction: column;
+            margin-top: 20px;
 
             .footer-l{
+                // margin-top: 20px;
                 width: 100vw;
-                height: 50px;
-                font-size: 1.6rem;
-                line-height: 50px;
+                height: auto;
+
+                &_schedule_flex{
+                    &:not(:first-of-type){
+                        margin-top: 5px;
+                    }
     
-                &_open_small{
+                    dt{
+                        width: 80px;
+                    }
+                }
+                &_schedule_open_small{
+                    margin-left: 3px;
                     font-size: 1.2rem;
+                }
+    
+                &_seat_flex{
+                    margin-top: 5px;
+    
+                    dt{
+                        width: 130px;
+                    }
                 }
             }
             .footer-r{
+                margin-top: 20px;
                 width: 100vw;
             }
         }
         .copyright_wrapp{
             margin-top: 10px;
         }
+        
     }
     
     @media screen and (max-width: 519px) {

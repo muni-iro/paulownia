@@ -457,16 +457,61 @@ li {
 }
 
 .footer-flex .footer-l {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 50vw;
   height: 167px;
-  font-size: 2rem;
-  text-align: center;
-  line-height: 167px;
 }
 
-.footer-flex .footer-l_open_small {
-  margin-left: 10px;
-  font-size: 1.6rem;
+.footer-flex .footer-l_inner {
+  margin-right: auto;
+  margin-left: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.footer-flex .footer-l_schedule_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-flex .footer-l_schedule_flex:first-of-type {
+  font-weight: bold;
+}
+
+.footer-flex .footer-l_schedule_flex:not(:first-of-type) {
+  margin-top: 8px;
+}
+
+.footer-flex .footer-l_schedule_flex dt {
+  width: 100px;
+}
+
+.footer-flex .footer-l_schedule_open_small {
+  margin-left: 5px;
+  font-weight: normal;
+  font-size: 1.4rem;
+}
+
+.footer-flex .footer-l_seat_flex {
+  margin-top: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer-flex .footer-l_seat_flex dt {
+  width: 140px;
 }
 
 .footer-flex .footer-r {
@@ -488,20 +533,33 @@ li {
   }
   .footer-flex {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 20px;
   }
   .footer-flex .footer-l {
     width: 100vw;
-    height: 50px;
-    font-size: 1.6rem;
-    line-height: 50px;
+    height: auto;
   }
-  .footer-flex .footer-l_open_small {
+  .footer-flex .footer-l_schedule_flex:not(:first-of-type) {
+    margin-top: 5px;
+  }
+  .footer-flex .footer-l_schedule_flex dt {
+    width: 80px;
+  }
+  .footer-flex .footer-l_schedule_open_small {
+    margin-left: 3px;
     font-size: 1.2rem;
   }
+  .footer-flex .footer-l_seat_flex {
+    margin-top: 5px;
+  }
+  .footer-flex .footer-l_seat_flex dt {
+    width: 130px;
+  }
   .footer-flex .footer-r {
+    margin-top: 20px;
     width: 100vw;
   }
   .footer .copyright_wrapp {
@@ -4174,13 +4232,13 @@ li {
   }
 }
 
-.food .to-pdf_wrapp {
+.mocktails .to-pdf_wrapp {
   margin-left: 0;
   margin-right: auto;
 }
 
 @media screen and (max-width: 959px) {
-  .food .to-pdf_wrapp {
+  .mocktails .to-pdf_wrapp {
     margin-left: auto;
     margin-right: 0;
   }
@@ -4201,6 +4259,11 @@ li {
     margin-left: auto;
     margin-right: 0;
   }
+}
+
+.food .to-pdf_wrapp {
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .to-pdf_wrapp {
@@ -4402,6 +4465,61 @@ li {
   }
 }
 
+.mocktails {
+  margin-top: 175px;
+}
+
+.mocktails .section-group {
+  text-align: center;
+}
+
+.mocktails .section-group hr {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mocktails .mocktails-txt {
+  margin-top: 85px;
+  margin-right: 19.79167vw;
+  margin-left: 19.79167vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 2em;
+}
+
+.mocktails .mocktails-txt_l {
+  width: 28.61111vw;
+}
+
+.mocktails .mocktails-txt_r {
+  margin-left: 3.19444vw;
+  width: 28.61111vw;
+}
+
+@media screen and (max-width: 959px) {
+  .mocktails {
+    margin-top: 120px;
+  }
+  .mocktails .mocktails-txt {
+    margin-top: 0;
+    margin-right: 5vw;
+    margin-left: 5vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mocktails .mocktails-txt_l {
+    width: 100%;
+  }
+  .mocktails .mocktails-txt_r {
+    margin-top: 2em;
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
 .view {
   margin-top: 175px;
 }
@@ -4504,8 +4622,13 @@ li {
   line-height: 2em;
 }
 
+.greeting .greeting-txt_l {
+  width: 28.61111vw;
+}
+
 .greeting .greeting-txt_r {
   margin-left: 3.19444vw;
+  width: 28.61111vw;
 }
 
 .greeting .view-slide {
@@ -4538,9 +4661,13 @@ li {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .greeting .greeting-txt_l {
+    width: 100%;
+  }
   .greeting .greeting-txt_r {
     margin-top: 2em;
     margin-left: 0;
+    width: 100%;
   }
   .greeting .view-slide {
     margin-top: 50px;

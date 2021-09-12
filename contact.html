@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe & Bar - Paulownia -</title>
+    <title>Contact Cafe & Bar - Paulownia -</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-precomposed.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Noto+Sans+JP:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/html5reset-1.6.1.css">
@@ -23,10 +25,11 @@
             <nav class="header-r">
                 <ul class="nav-lists">
                     <li class="nav-list_content"><a href="concept.html">Concept</a></li>
-                    <li class="nav-list_content"><a href="index.html#food">Food</a></li>
+                    <li class="nav-list_content"><a href="index.html#mocktails">Mocktails</a></li>
                     <li class="nav-list_content"><a href="index.html#drink">Drink</a></li>
                     <li class="nav-list_content"><a href="index.html#alcohol">Alcohol</a></li>
-                    <li class="nav-list_content"><a href="index.html#option">Option</a></li>
+                    <li class="nav-list_content"><a href="index.html#food">Food</a></li>
+                    <li class="nav-list_content"><a href="index.html#point">Point</a></li>
                     <li class="nav-list_content"><a href="index.html#access">Access</a></li>
                     <li class="nav-list_content"><a href="contact.html">Contact</a></li>
                     <li class="nav-list_insta"><a class="nav-list_insta-logo" href="https://www.instagram.com/cafe.paulownia/?hl=ja" target="_blank" rel="noopener noreferrer"><img src="images/Insta-logo.svg" alt="instagram"></a></li>
@@ -61,10 +64,11 @@
                         <div class="humburger_menu-nav_inner">
                             <ul class="nav-lists">
                                 <li class="nav-list_content"><a href="concept.html">Concept</a></li>
-                                <li class="nav-list_content"><a href="index.html#food">Food</a></li>
+                                <li class="nav-list_content"><a href="index.html#mocktails">Mocktails</a></li>
                                 <li class="nav-list_content"><a href="index.html#drink">Drink</a></li>
                                 <li class="nav-list_content"><a href="index.html#alcohol">Alcohol</a></li>
-                                <li class="nav-list_content"><a href="index.html#option">Option</a></li>
+                                <li class="nav-list_content"><a href="index.html#food">Food</a></li>
+                                <li class="nav-list_content"><a href="index.html#point">Point</a></li>
                                 <li class="nav-list_content"><a href="index.html#access">Access</a></li>
                                 <li class="nav-list_content"><a href="contact.html">Contact</a></li>
                                 <li class="nav-list_insta"><a class="nav-list_insta-logo" href="https://www.instagram.com/cafe.paulownia/?hl=ja" target="_blank" rel="noopener noreferrer"><img src="images/Insta-logo.svg" alt="instagram"></a></li>
@@ -102,23 +106,23 @@
             
             <div class="contact-form">
                 <h2>コンタクトフォーム</h2>
-                <form action="" method="POST">
+                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc7qohJfS2tsGTTjKj-OFyDCPsF3xbGZIpV1qZII_8ALC33yA/formResponse" method="POST">
                     <ul class="form-contents">
                         <li class="form-list individual">
                             <label class="form-ttl" for="name">お名前<span class="required">*</span></label>
-                            <input class="form-detail" type="text" name="yourname" id="name" placeholder="例）山田太郎" required>
+                            <input class="form-detail" type="text" name="entry.2005620554" id="name" placeholder="例）山田太郎" required>
                         </li>
                         <li class="form-list individual">
                             <label class="form-ttl" for="furigana">フリガナ</label>
-                            <input class="form-detail" type="text" name="furigana" id="furigana" placeholder="例）ヤマダタロウ">
+                            <input class="form-detail" type="text" name="entry.1058037448" id="furigana" placeholder="例）ヤマダタロウ">
                         </li>
                         <li class="form-list individual">
                             <label class="form-ttl" for="email">メールアドレス<span class="required">*</span></label>
-                            <input class="form-detail" type="email" name="email" id="email" required>
+                            <input class="form-detail" type="email" name="entry.1045781291" id="email" required>
                         </li>
                         <li class="form-list individual">
                             <label class="form-ttl" for="tel">電話番号</label>
-                            <input class="form-detail" type="text" name="tel" id="tel">
+                            <input class="form-detail" type="text" name="entry.1166974658" id="tel">
                         </li>
                         <li class="form-list">
                             <span class="form-ttl">お問い合わせ内容</span>
@@ -157,7 +161,8 @@
     <footer class="footer">
         <div class="footer_inner">
             <p class="footer-logo">
-                <img src="images/header-footer-logo.svg" alt="Paulownia">
+                <img class="footer-logo_pc" src="images/header-footer-logo.svg" alt="Paulownia">
+                <img class="footer-logo_sp" src="images/Paulownia-logo_sp.svg" alt="Paulownia">
             </p>
             <p class="insta-btn">
                 <a href="https://www.instagram.com/cafe.paulownia/?hl=ja" target="_blank" rel="noopener noreferrer">
@@ -167,8 +172,20 @@
 
             <div class="footer-flex">
                 <div class="footer-l">
-                    <span class="footer-l_img"></span>
-                    <p class="footer-l_open">15:00 - Last<span class="footer-l_open_small">（ご相談ください）</span></p>
+                    <div class="footer-l_inner">
+                        <dl class="footer-l_schedule">
+                        <div class="footer-l_schedule_flex"><dt class="footer-l_schedule_open">営業時間</dt><dd>15:00 - Last<span class="footer-l_schedule_open_small">（ご相談ください）</span></dd></div>
+                        <div class="footer-l_schedule_flex"><dt class="footer-l_schedule_Nclosed">定休日</dt><dd>(水)(日)</dd></div>
+                        <div class="footer-l_schedule_flex"><dt class="footer-l_schedule_Iclosed">不定休日</dt><dd>(木)</dd></div>
+                    </dl>
+                    <hr>
+                    <dl class="footer-l_seat">
+                        <div class="footer-l_seat_flex"><dt>カウンター</dt><dd>4席</dd></div>
+                        <div class="footer-l_seat_flex"><dt>6人がけソファー</dt><dd>2席</dd></div>
+                        <div class="footer-l_seat_flex"><dt>4人がけソファー</dt><dd>1席</dd></div>
+                        <div class="footer-l_seat_flex"><dt>2人がけテーブル</dt><dd>2席</dd></div>
+                    </dl>
+                    </div>
                 </div>
                 <div class="footer-r">
                     <div class="contact-btn_wrapp">

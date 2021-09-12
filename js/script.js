@@ -125,7 +125,7 @@ $('.fadeInUpTrigger').on('inview', function(event, isInView) {
   if (isInView) {//表示領域に入った時
     $(this).addClass('fadeInUp');//クラス名が付与
   } else {//表示領域から出た時
-    // $(this).removeClass('fadeInUp');//クラス名が除去
+    $(this).removeClass('fadeInUp');//クラス名が除去
   }
 });
 
@@ -135,8 +135,8 @@ $('.fadeInSlideTrigger').on('inview', function(event, isInView) {
     // $('.js-spanize > span').addClass('parapara');//クラス名が付与
 
   } else {//表示領域から出た時
-    // $(this).removeClass('fadeInSlide');//クラス名が除去
-    // $('.js-spanize > span').removeClass('parapara');//クラス名が除去
+    $(this).removeClass('fadeInSlide');//クラス名が除去
+    $('.js-spanize > span').removeClass('parapara');//クラス名が除去
   }
 });
 
